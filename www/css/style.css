@@ -1,0 +1,39 @@
+
+.red {
+    color:red !important;
+    font-size:32px;
+}
+.green {
+    color:green !important;
+    font-size:32px !important;
+}
+.blue {
+    color:blue !important;
+    font-size:32px !important;
+}
+.orange {
+    color:orange !important;
+    font-size:32px !important;
+}
+
+.outer {
+    width:100%;
+/*    min-height: 100vh;*/
+}
+.center {
+	background-color: white;
+    width:95%;
+    margin: 0 auto;
+/*    min-height: 10vh;*/
+}
+
+.background {
+	background-color: #71c5cf;
+}
+
+.navigation {
+	background-color: #333;
+}
+.correctFooter {
+	height: 95px;
+}

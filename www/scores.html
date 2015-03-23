@@ -1,0 +1,16 @@
+<div ng-app="stroop" ng-controller='colorCont'>
+	<table class="expanded" style="width:100%;">
+		<thead>
+			<tr>
+				<th class="expanded">Top Scores</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="scorex in getTopScores() track by $index">
+				<td>{{scorex}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
