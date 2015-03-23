@@ -13,7 +13,7 @@
             if (window.StatusBar) {
                 StatusBar.styleDefault();
             }
-        })
+        });
     })
 
     .factory('$localstorage', ['$window',
@@ -31,7 +31,7 @@
                 getObject: function(key) {
                     return JSON.parse($window.localStorage[key] || '{}');
                 }
-            }
+            };
         }
     ])
 
@@ -47,8 +47,6 @@
             $scope.color4 = "red";
             $scope.gameEnded = false;
             $scope.scores = [];
-
-
 
             $scope.stopGame = function() {
                 $scope.showStart = true;
@@ -115,11 +113,11 @@
             };
 
             $scope.clicked = function(input) {
-                if ($scope.isGoing == false) {
+                if ($scope.isGoing === false) {
                     return;
                 }
                 $scope.answer = (input == $scope.quiz);
-                if ($scope.answer == true) {
+                if ($scope.answer === true) {
                     $scope.right++;
                     $scope.tempRight = true;
                     $timeout($scope.sr, 200, true);
@@ -156,17 +154,15 @@
                     templateUrl: 'scores.html'
                 });
                 alertPopup.then(function(res) {
-                    console.log('Thank you for not eating my delicious ice cream cone');
                 });
             };
             $scope.showInfo = function() {
                 var alertPopup = $ionicPopup.alert({
 
                     title: 'Don\'t touch this button!',
-                    template: 'Developed by Todd Wickizer'
+                    template: 'Developed by ToWiCode for Bcube\nMatch the color of the text to the spelling of the color.'
                 });
                 alertPopup.then(function(res) {
-                    console.log('Thank you for playing');
                 });
             };
 
@@ -176,7 +172,6 @@
                     template: 'You can reach me at Toddwickizer@gmail.com'
                 });
                 alertPopup.then(function(res) {
-                    console.log('Thank you for playing');
                 });
             };
 
@@ -188,8 +183,6 @@
                 }
 
                 var x = $scope.scores;
-                console.log(x);
-
                 return x;
 
             };
@@ -201,11 +194,8 @@
                     scores[i] = $localstorage.get('scores' + i, 0);
                     var stor = scores[i];
                     var score = parseInt(score);
-                    console.log(stor + "  " + score);
                     if (score > stor) {
-                        console.log(stor + " < " + score);
                         $localstorage.set('scores' + i, score);
-
                         ///RECURSION MOTHERFUCKER
                         $scope.submitScore(stor);
                         return;
@@ -221,5 +211,4 @@
             };
         }
     ]);
-
 }());
