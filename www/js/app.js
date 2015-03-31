@@ -160,7 +160,7 @@
                 var alertPopup = $ionicPopup.alert({
 
                     title: 'Don\'t touch this button!',
-                    template: 'Developed by ToWiCode for Bcube\nMatch the color of the text to the spelling of the color.'
+                    template: 'Developed by ToWiCode for Bcube. To Play: match the color of the text to the spelling of the color.'
                 });
                 alertPopup.then(function(res) {
                 });
